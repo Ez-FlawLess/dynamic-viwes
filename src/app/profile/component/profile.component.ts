@@ -1,4 +1,4 @@
-import { Component, ComponentFactoryResolver, HostListener, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { ProfileDesktopComponent } from '../desktop';
 import { ProfileMobileComponent } from '../mobile';
 
