@@ -1,20 +1,20 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import {  NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfileDesktopComponent } from './desktop';
 import { ProfileMobileComponent } from './mobile';
+import { ProfileComponent } from './component/profile.component';
 
 @NgModule({
   declarations: [
     ProfileDesktopComponent,
     ProfileMobileComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    ProfileDesktopComponent,
-    ProfileMobileComponent,
+    ProfileComponent,
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ProfileModule { }
