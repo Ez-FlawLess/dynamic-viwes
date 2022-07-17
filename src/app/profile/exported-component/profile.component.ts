@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, ComponentRef, HostListener, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { ProfileDesktopComponent } from '../desktop';
 import { ProfileMobileComponent } from '../mobile';
 
@@ -8,6 +8,7 @@ import { ProfileMobileComponent } from '../mobile';
   
 })
 export class ProfileComponent implements OnInit {
+    @Input() name: string | undefined;
 
     @ViewChild('placeholder', {read: ViewContainerRef, static: true})
     public placeholder!: ViewContainerRef;
@@ -24,12 +25,14 @@ export class ProfileComponent implements OnInit {
     }
 
     selectView() {
+        let component: ComponentRef<ProfileMobileComponent>
         if (window.innerWidth < 500) {
             this.placeholder.clear()
-            this.placeholder.createComponent(ProfileMobileComponent)
+            component = this.placeholder.createComponent(ProfileMobileComponent)
         } else {
             this.placeholder.clear()
-            this.placeholder.createComponent(ProfileDesktopComponent)
+            component = this.placeholder.createComponent(ProfileDesktopComponent)
         }
+        component.instance.name = this.name
     }
 }
