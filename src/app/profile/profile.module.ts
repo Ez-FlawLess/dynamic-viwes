@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProfileDesktopComponent, ProfileMobileComponent } from './profile.component';
+import { ProfileDesktopComponent } from './desktop';
+import { ProfileMobileComponent } from './mobile';
 
 @NgModule({
   declarations: [
